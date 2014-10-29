@@ -1,0 +1,49 @@
+Office Dependency Discovery Tool
+
+Modified by Fabio Corubolo:
+- Maven project
+
+From:
+http://sourceforge.net/projects/officeddt/
+Niklas Rehfeld
+
+Description
+The Dependency Discovery Tool searches through binary office files (.doc, .xls and .ppt) and tries to find any documents or files that are linked to the document. 
+
+It is written in java, using the Apache POI libraries ( http://poi.apache.org )
+
+This project was part of a summer scholarship from the School of Engineering and Computer Science at Victoria University, Wellington (http://ecs.vuw.ac.nz) in conjunction with Archives New Zealand ( http://archives.govt.nz ). 
+
+At the moment it requires Java 6 to build and run, but this should change soon, and it will run on Java 5 upwards.
+
+
+
+-------------BUILDING-----------------------------
+
+To build this, you need some flavour of java (version >= 5), junit4 and Apache Ant (ant.apache.org).
+Once you have that installed, simply run 
+
+     $ ant dist
+
+in the folder with 'build.xml' in it, and it will build OfficeDDT.jar in the 'dist' folder. The build script uses two variables that you may need to set,
+* poi.libs.dir is the directory that the poi libraries reside in (defaults to ./lib)
+* junit.libs.dir is the directory that the junit library is in (defaults to /usr/share/java)
+
+Once it has compiled, running 
+
+     $ java -jar dist/OfficeDDT.jar
+
+will give you the usage summary for the main program. 
+
+If you want to build the javadocs run
+
+     $ ant javadoc
+
+they will end up in dist/doc.
+
+Otherwise just run 'ant' without any arguments and you can see all of the useful build targets. 
+
+
+---------------NOTES-----------------------------
+
+* It is not really finished. And the build script is very fragile. 

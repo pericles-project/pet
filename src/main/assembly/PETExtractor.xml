@@ -1,0 +1,69 @@
+<assembly
+	xmlns="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/plugins/maven-assembly-plugin/assembly/1.1.0 http://maven.apache.org/xsd/assembly-1.1.0.xsd">
+	<id>extractor-${project.version}</id>
+	
+
+	<formats>
+		<format>zip</format>
+	</formats>
+	<dependencySets>
+		<dependencySet>
+			<outputDirectory>lib</outputDirectory>
+
+		</dependencySet>
+	</dependencySets>
+
+	<files>
+
+		<file>
+			<source>target/PET-extractor.jar</source>
+			<outputDirectory>/</outputDirectory>
+		</file>
+	
+	</files>
+	
+	<fileSets>
+		<!--<fileSet>
+			<directory>src/OSXAPP</directory>
+			<outputDirectory>/</outputDirectory>
+			<includes>
+				<include>**</include>
+			</includes>
+			<useDefaultExcludes>true</useDefaultExcludes>
+		</fileSet>
+		--><fileSet>
+			<directory>/doc</directory>
+			<outputDirectory>/doc</outputDirectory>
+			<includes>
+				<include>**</include>
+			</includes>
+			<useDefaultExcludes>true</useDefaultExcludes>
+		</fileSet>
+		 <fileSet>
+	         <directory>target/dependency/sigar/hyperic-sigar-1.6.5/sigar-bin/lib/</directory>
+	        <outputDirectory>lib</outputDirectory>
+	        <includes>
+				<include>**</include>
+			</includes>
+	    </fileSet>
+	    
+		 <fileSet>
+	         <directory>nativeTools/</directory>
+	        <outputDirectory>nativeTools/</outputDirectory>
+	        <includes>
+				<include>**</include>
+			</includes>
+			<fileMode>0755</fileMode>
+	    </fileSet>
+	    <fileSet>
+	         <directory>profile_templates/</directory>
+	        <outputDirectory>profile_templates/</outputDirectory>
+	        <includes>
+				<include>**</include>
+			</includes>
+	    </fileSet>
+	</fileSets>
+
+</assembly>

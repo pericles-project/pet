@@ -1,0 +1,17 @@
+{
+  "class" : "configuration.ModuleConfiguration",
+  "moduleName" : "Java installation information snapshot",
+  "moduleDisplayName" : "Java installation information snapshot",
+  "moduleVersion" : "1.0",
+  "enabled" : true,
+  "recordEvents" : false,
+  "supportedSystems" : [ "SYSTEM_INDEPENDENT" ],
+  "fileFilter" : {
+    "fileExtensionFilter" : null,
+    "inclusiveMimeType" : [ ],
+    "inclusiveMediaType" : [ ],
+    "exclusiveMediaType" : [ ],
+    "exclusiveMimeType" : [ ]
+  },
+  "eventAddToProfile" : null
+}

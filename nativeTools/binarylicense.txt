@@ -1,0 +1,35 @@
+Shared Binary License (SBL) 1.0
+Copyright notice:
+Copyright (c) 2004, www.intellectualheaven.com
+All rights reserved.
+
+Initial developer:
+Pankaj Garg (x_pankaj_x@intellectualheaven.com)
+
+Redistribution and use of this software is permitted provided
+that the following conditions are met:
+
+Conditions:
+1.  Redistributions must reproduce the above copyright notice,
+    Initial developer, this list of conditions and the following
+    disclaimer in the documentation and/or other materials
+    provided with the distribution. 
+2.  Neither the name "www.intellectualheaven.com" nor the names of
+    its contributors may be used to endorse or promote products
+    derived from this software without specific prior written
+    permission.
+
+Disclaimer:
+THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
+"AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
+LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS
+FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE
+COPYRIGHT OWNER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT,
+INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING,
+BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS
+OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED
+AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT
+LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY
+WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE
+POSSIBILITY OF SUCH DAMAGE.
+

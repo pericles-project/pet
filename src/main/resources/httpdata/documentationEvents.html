@@ -1,0 +1,310 @@
+<html>
+<head>
+    <title>PET event timeline - for LOSOF events</title>
+
+    <style type="text/css">
+        body {
+            font-size: 10pt;
+            font-family: verdana, sans, arial, sans-serif;
+        }
+    </style>
+
+    <script type="text/javascript" src="timeline.js"></script>
+    <script type="text/javascript" src="events.json"></script>
+    <link rel="stylesheet" type="text/css" href="timeline.css">
+<style>
+#info
+{
+border:1px solid black;
+background-color:#F8F8F8;
+min-height:100px;
+min-width:100px;
+padding:8px;
+">
+This div has min-height and min-width applied.
+</div>
+}
+</style>
+    <script type="text/javascript">
+        var timeline;
+        Array.prototype.pushArray = function(arr) {
+            this.push.apply(this, arr);
+        };
+        var data = new Array();
+        var keys = {};
+      // linking the key-value-pairs is optional
+// if no argument is provided, linkItems === undefined, i.e. !== false
+// --> linking will be enabled
+function Map(linkItems) {
+    this.current = undefined;
+    this.size = 0;
+
+    if(linkItems === false)
+        this.disableLinking();
+}
+
+Map.noop = function() {
+    return this;
+};
+
+Map.illegal = function() {
+    throw new Error("illegal operation for maps without linking");
+};
+
+// map initialisation from existing object
+// doesn't add inherited properties if not explicitly instructed to:
+// omitting foreignKeys means foreignKeys === undefined, i.e. == false
+// --> inherited properties won't be added
+Map.from = function(obj, foreignKeys) {
+    var map = new Map;
+
+    for(var prop in obj) {
+        if(foreignKeys || obj.hasOwnProperty(prop))
+            map.put(prop, obj[prop]);
+    }
+
+    return map;
+};
+
+Map.prototype.disableLinking = function() {
+    this.link = Map.noop;
+    this.unlink = Map.noop;
+    this.disableLinking = Map.noop;
+    this.next = Map.illegal;
+    this.key = Map.illegal;
+    this.value = Map.illegal;
+    this.removeAll = Map.illegal;
+
+    return this;
+};
+
+// overwrite in Map instance if necessary
+Map.prototype.hash = function(value) {
+    return (typeof value) + ' ' + (value instanceof Object ?
+        (value.__hash || (value.__hash = ++arguments.callee.current)) :
+        value.toString());
+};
+
+Map.prototype.hash.current = 0;
+
+// --- mapping functions
+
+Map.prototype.get = function(key) {
+    var item = this[this.hash(key)];
+    return item === undefined ? undefined : item.value;
+};
+
+Map.prototype.put = function(key, value) {
+    var hash = this.hash(key);
+
+    if(this[hash] === undefined) {
+        var item = { key : key, value : value };
+        this[hash] = item;
+
+        this.link(item);
+        ++this.size;
+    }
+    else this[hash].value = value;
+
+    return this;
+};
+
+Map.prototype.remove = function(key) {
+    var hash = this.hash(key);
+    var item = this[hash];
+
+    if(item !== undefined) {
+        --this.size;
+        this.unlink(item);
+
+        delete this[hash];
+    }
+
+    return this;
+};
+
+// only works if linked
+Map.prototype.removeAll = function() {
+    while(this.size)
+        this.remove(this.key());
+
+    return this;
+};
+
+// --- linked list helper functions
+
+Map.prototype.link = function(item) {
+    if(this.size == 0) {
+        item.prev = item;
+        item.next = item;
+        this.current = item;
+    }
+    else {
+        item.prev = this.current.prev;
+        item.prev.next = item;
+        item.next = this.current;
+        this.current.prev = item;
+    }
+};
+
+Map.prototype.unlink = function(item) {
+    if(this.size == 0)
+        this.current = undefined;
+    else {
+        item.prev.next = item.next;
+        item.next.prev = item.prev;
+        if(item === this.current)
+            this.current = item.next;
+    }
+};
+
+// --- iterator functions - only work if map is linked
+
+Map.prototype.next = function() {
+    this.current = this.current.next;
+};
+
+Map.prototype.key = function() {
+    return this.current.key;
+};
+
+Map.prototype.value = function() {
+    return this.current.value;
+};
+ var my_map = new Map();
+ var fsEvents = new Array();
+
+ 
+ 	function adjustView(){
+ 		timeline.setVisibleChartRangeAuto();
+ 	}
+        // Called when the Visualization API is loaded.
+        function drawVisualization() {
+        	function compare(a,b) {
+        		  return a.timestamp - b.timestamp;
+        		}
+        	mydata.sort(compare);
+            for (var i = 0; i <mydata.length ; i++) {
+                var k = mydata[i].data.name;
+                if (mydata[i].reporterName == "LSOF use monitor") {
+               		keys[k] = k;
+                var t = my_map.get(k);
+                var tt = new Object();
+                var push = false;
+                if (t == undefined) {
+                    t = new Array();
+                    push = true;
+                    my_map.put(mydata[i].data.name,t);
+                } else {
+                    tt = t[t.length-1];
+                }
+                
+                if (mydata[i].type == "appear") {
+                    tt = new Object();
+                    tt.start = new Date(mydata[i].timestamp);
+                    push = true;
+                }
+                else 
+                    tt.end = new Date(mydata[i].timestamp);
+                var pn = mydata[i].data.fullProcessName;
+                if (pn == undefined)
+                	pn = mydata[i].data.command;
+                
+                tt.content = '' + pn + '<br><b>' + mydata[i].data.name.substring(mydata[i].data.name.lastIndexOf("/")+1)+"</b>";
+                tt.fullContent = mydata[i];
+                if (push)
+                	t.push(tt);
+                } else if (mydata[i].reporterName == "File event directory module") {
+                	tt = new Object();
+                    tt.start = new Date(mydata[i].timestamp);
+                    tt.content = '<b>Created: ' + mydata[i].data.substring(mydata[i].fileName.lastIndexOf("/")+1)+"</b>";
+                    tt.fullContent = mydata[i];
+                    fsEvents.push(tt);
+                }
+                
+            };
+            
+            
+
+    for (var property in keys) {
+    if (keys.hasOwnProperty(property)) {
+        var c = my_map.get(property);
+        
+         if (c !== undefined) {
+            data.pushArray(c);
+           /*  console.log(property);
+            console.log(c); */
+           }
+    }
+}
+    data.pushArray(fsEvents);
+            
+            // specify options
+            var options = {
+                'width':  '100%',
+                'height': 'auto',
+                'editable': false,   // enable dragging and editing events
+                'style': 'box',
+                
+                'zoomMax': 31536000000,
+                'zoomMin': 1000
+            };
+
+            // Instantiate our timeline object.
+            mytimeline = new links.Timeline(document.getElementById('mytimeline'));
+function onselect() {
+  var sel = mytimeline.getSelection();
+  if (sel.length) {
+    if (sel[0].row != undefined) {
+      var row = sel[0].row;
+      var text =  "<h3>Event information</h3>";
+      var c = mytimeline.getItem(sel[0].row).fullContent;
+      var pn =c.data.fullProcessName;
+      if (pn == undefined)
+      	pn = c.data.command;
+      if (pn != undefined) {
+      text +=  "Process name: " + pn  + "<br>";
+      text +=  "Object full path: <b>" + c.data.name  + "</b><br><br>";
+      text +=  "Process full path: " +c.data.fullProcesspath  + "<br>";
+      text +=  "Process arguments: " + c.data.processArguments  + "<br>";
+      text +=  "Process PID: " + c.data.pid  + "<br>";
+      text +=  "Type: " + c.type+ "<br>";  
+      text +=  "Start: " + mytimeline.getItem(sel[0].row).start  + "<br>";
+      text +=  "End: " + mytimeline.getItem(sel[0].row).start  + "<br>";
+      } else {
+    	  text +=  "Object full path: " + c.fileName  + "<br>";
+      }
+      document.getElementById('info').innerHTML= text;
+    }
+  }
+}
+
+		links.events.addListener(mytimeline, 'select', onselect);
+            // function onRangeChanged(properties) {
+            //     document.getElementById('info').innerHTML += 'rangechanged ' +
+            //             properties.start + ' - ' + properties.end + '<br>';
+            // }
+
+            // // attach an event listener using the links events handler
+            // links.events.addListener(timeline, 'rangechanged', onRangeChanged);
+
+            // Draw our timeline with the created data and options
+            mytimeline.draw(data, options);
+        }
+    </script>
+</head>
+
+<body onload="drawVisualization();">
+<h1>Timeline for events</h1>
+<p>
+This time-line shows the file usage from the monitored applications, and monitored folder created files. The time is indicated with a span in the case that the use start and end are known, or with a point when only the start or end are known.<br>
+To access detailed information for an event, please select the event. 
+</p>
+
+<div id="mytimeline"></div>
+<br><br>
+<!-- <input type="button" value="Fit all events" title="Fit all events" onclick="adjustView()">
+ --><div id="info"><h3>Event information</h3></div>
+
+</body>
+</html>

@@ -1,0 +1,33 @@
+{
+  "class" : "modules.GeneralExecutableModuleConfig",
+  "moduleName" : "Installed software snapshot",
+  "moduleDisplayName" : "Installed software snapshot",
+  "moduleVersion" : "0.1",
+  "enabled" : true,
+  "recordEvents" : false,
+  "supportedSystems" : [ "WINDOWS", "OS_X", "LINUX" ],
+  "fileFilter" : {
+    "fileExtensionFilter" : null,
+    "inclusiveMimeType" : [ ],
+    "inclusiveMediaType" : [ ],
+    "exclusiveMediaType" : [ ],
+    "exclusiveMimeType" : [ ]
+  },
+  "eventAddToProfile" : null,
+  "options" : null,
+  "defaults" : null,
+  "workingDirectory" : null,
+  "commandNameOrPath" : null,
+  "OSXcommandNameOrPath" : null,
+  "LinuxcommandNameOrPath" : "pacman",
+  "WINcommandNameOrPath" : null,
+  "BSDcommandNameOrPath" : null,
+  "OSXoptions" : null,
+  "Winoptions" : null,
+  "Linuxoptions" : "-Qe",
+  "noHelp" : true,
+  "regEx" : null,
+  "timeout" : 10000,
+  "waitBetweenCalls" : 3000,
+  "helpOption" : "-h"
+}

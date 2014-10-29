@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+    TODO define vocabulary identification data
+    PUBLIC ID  : -//vendor//vocabulary//EN
+    SYSTEM ID  : http://server/path/__NAME__
+-->
+
+<!ELEMENT links (file*, count)>
+<!ELEMENT file (link*)>
+<!ELEMENT link (path*)>
+<!ELEMENT count (#PCDATA)>
+<!ELEMENT path (#PCDATA)>
+<!ATTLIST file path CDATA #REQUIRED>
+<!ATTLIST path type (absolute|relative|other) "other">
+<!ATTLIST link type CDATA "0">

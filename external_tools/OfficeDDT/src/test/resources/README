@@ -1,0 +1,100 @@
+For each of the file types, there are test files for each version of Office.
+Well, there should be, but I don't have copies of Office earlier than 2003.
+
+The folder structure at the moment should be
+
+testfiles
+|---- xls
+|   |---- 2003
+|   |   |----chart-from-source.xls
+|   |   |----chart-pasted.xls
+|   |   |----formulas.xls
+|   |   |----insert-as-object.xls
+|   |   |----pivot-tables.xls
+|   |	|----paste-as-link-text.xls
+|   |	|----paste-as-link-doc.xls
+|   |---- 2007
+|   |   |----chart-from-source.xls
+|   |   |----chart-pasted.xls
+|   |   |----formulas.xls
+|   |   |----insert-as-object.xls
+|   |   |----pivot-tables.xls
+|   |---- 2010
+|---- ppt
+|   |---- 2003
+|   |	|----insert-as-object.ppt
+|   |	|----paste-as-link-doc.ppt
+|   |	|----paste-as-link-other.ppt
+
+Where folders named after an office version contain files created by that version of office.
+All of the version folders should contain the same files to make it easy to get a consistent set of
+test files across versions.
+
+The expected results are:
+
+file:                   |       dependencies			|
+------------------------|---------------------------------------|
+chart-from-source.xls   |   2003-chartsource.xls		|
+                        |   2007-chartsource.xls		|
+                        |   2010-chartsource.xls		|
+------------------------|---------------------------------------|
+chart-pasted.xls        |   2003-chart.xls			|
+                        |   2007-chart.xls			|
+                        |   2010-chart.xls			|
+------------------------|---------------------------------------|
+formulas.xls            |   2003-formulasource.xls		|
+                        |   2007-formulasource.xls		|
+                        |   2010-formulasource.xls		|
+------------------------|---------------------------------------|
+insert-as-object.xls    |   2003-normalsource.xls		|
+                        |   2007-normalsource.xls		|
+                        |   2010-normalsource.xls		|
+			|   2003-object-source.doc		|
+			|   2003-normal-source.ppt		|
+------------------------|---------------------------------------|
+pivot-tables.xls        |   2003-pivotsource.xls		|
+                        |   2007-pivotsource.xls		|
+                        |   2010-pivotsource.xls		|
+------------------------|---------------------------------------|
+paste-as-link-text.xls	|   2003-paste-special-range-source.doc	|
+------------------------|---------------------------------------|
+paste-as-link-doc.xls	|   2003-paste-special-doc-source.doc	|
+			|   2003-paste-special-doc-source.ppt	|
+------------------------|---------------------------------------|
+insert-as-object.ppt	|   2003-normalsource.xls		|
+			|   2003-object-source.doc		|
+			|   2003-normal-source.ppt		|
+------------------------|---------------------------------------|
+paste-as-link-doc.ppt	|   2003-paste=special-doc-source.doc	|
+			|   2003-paste-special-doc-source.ppt	|
+			|   2003-paste-special-doc-source.xls	|
+------------------------|---------------------------------------|
+paste-as-link-other.ppt	|   2003-chart.xls (in testfiles)	|
+			|   2003-normalsource.xls		|
+			|   2003-paste-special-slide-source.ppt	|
+			|   2003-paste-special-range-source.doc	|
+
+
+As is fairly obvious, the dependencies are files that are created by different versions of office again.
+Each file represents a mechanism for linking files. For instance, chart-from-source.xls contains
+charts that use data from the '20xx-chartsource.xls' files.
+
+the mechanisms that have been tested so far are:
+
+ * chart-from-source: a chart created with source data from a different workbook.
+ * chart-pasted: a chart created in a nother workbook, pasted into this workbook.
+ * formulas: a formula referencing another workbook.
+ * insert-as-object: another OLE file inserted as an OLE object (linked). This file should contain all three types of files linked in by this mechanism. That is, it should have a .doc, a .xls and a .ppt file inserted as an object for each version.
+ * pivot-tables: a pivot table referencing data from another workbook.
+ * paste-as-link-text: text that has been inserted with paste special->as link->as text and as unicode text. This file should have data pasted both as 'normal' text and as unicode text. 
+ * paste-as-link-doc: files pasted into the file by paste-special -> as link -> as document. This should contain all three document types pasted in like this. In fact it depends on what file type it is. Paste-as-link-doc.xls contains a word doc that has been paste-special'ed as a document, and a ppt *slide* that has been paste-special'ed as a powerpoint slide object.
+ * paste-as-link-other: contains misc other paste-special type stuff. paste-as-link-other has had a chart object, a range of cells in a spreadsheet, a single slide and a text range paste-special'ed into it.
+
+
+If any other files/tests are added to the project, they should be noted in here. 
+
+
+---- ::Issues:: ----
+
+2012-02-07
+ * not picking up the links in insert-as-object.ppt or paste-as-link-other.ppt.

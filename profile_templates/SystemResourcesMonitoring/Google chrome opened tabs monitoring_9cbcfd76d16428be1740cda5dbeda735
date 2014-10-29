@@ -1,0 +1,33 @@
+{
+  "class" : "modules.GeneralExecutableModuleConfig",
+  "moduleName" : "Google chrome opened tabs monitoring",
+  "moduleDisplayName" : "Google chrome opened tabs monitoring",
+  "moduleVersion" : "1.0",
+  "enabled" : false,
+  "recordEvents" : true,
+  "supportedSystems" : [ "OS_X" ],
+  "fileFilter" : {
+    "fileExtensionFilter" : null,
+    "inclusiveMimeType" : [ ],
+    "inclusiveMediaType" : [ ],
+    "exclusiveMediaType" : [ ],
+    "exclusiveMimeType" : [ ]
+  },
+  "eventAddToProfile" : null,
+  "options" : "list links",
+  "defaults" : "list links",
+  "workingDirectory" : null,
+  "commandNameOrPath" : null,
+  "OSXcommandNameOrPath" : "nativeTools/chrome-cli",
+  "LinuxcommandNameOrPath" : null,
+  "WINcommandNameOrPath" : null,
+  "BSDcommandNameOrPath" : null,
+  "OSXoptions" : null,
+  "Winoptions" : null,
+  "Linuxoptions" : null,
+  "noHelp" : false,
+  "regEx" : null,
+  "timeout" : 10000,
+  "waitBetweenCalls" : 5000,
+  "helpOption" : "-h"
+}

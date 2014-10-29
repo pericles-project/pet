@@ -1,0 +1,17 @@
+{
+  "class" : "configuration.ModuleConfiguration",
+  "moduleName" : "Process statistics monitoring",
+  "moduleDisplayName" : "Process statistics monitoring",
+  "moduleVersion" : "0.1",
+  "enabled" : true,
+  "recordEvents" : false,
+  "supportedSystems" : [ "SYSTEM_INDEPENDENT" ],
+  "fileFilter" : {
+    "fileExtensionFilter" : null,
+    "inclusiveMimeType" : [ ],
+    "inclusiveMediaType" : [ ],
+    "exclusiveMediaType" : [ ],
+    "exclusiveMimeType" : [ ]
+  },
+  "eventAddToProfile" : null
+}

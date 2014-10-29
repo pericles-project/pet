@@ -1,0 +1,33 @@
+{
+  "class" : "modules.GeneralExecutableModuleConfig",
+  "moduleName" : "Windows Handle monitoring daemon",
+  "moduleDisplayName" : "Windows Handle monitoring daemon",
+  "moduleVersion" : "1.0",
+  "enabled" : false,
+  "recordEvents" : true,
+  "supportedSystems" : [ "WINDOWS" ],
+  "fileFilter" : {
+    "fileExtensionFilter" : null,
+    "inclusiveMimeType" : [ ],
+    "inclusiveMediaType" : [ ],
+    "exclusiveMediaType" : [ ],
+    "exclusiveMimeType" : [ ]
+  },
+  "eventAddToProfile" : null,
+  "options" : "-u",
+  "defaults" : "-u",
+  "workingDirectory" : null,
+  "commandNameOrPath" : null,
+  "OSXcommandNameOrPath" : null,
+  "LinuxcommandNameOrPath" : null,
+  "WINcommandNameOrPath" : "nativeTools/handle.exe",
+  "BSDcommandNameOrPath" : null,
+  "OSXoptions" : null,
+  "Winoptions" : null,
+  "Linuxoptions" : null,
+  "noHelp" : false,
+  "regEx" : null,
+  "timeout" : 10000,
+  "waitBetweenCalls" : 1000,
+  "helpOption" : "-h"
+}

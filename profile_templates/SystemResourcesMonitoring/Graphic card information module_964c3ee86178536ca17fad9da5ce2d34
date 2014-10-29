@@ -1,0 +1,33 @@
+{
+  "class" : "modules.GeneralExecutableModuleConfig",
+  "moduleName" : "Graphic card information module",
+  "moduleDisplayName" : "Graphic card information module",
+  "moduleVersion" : "1.0",
+  "enabled" : true,
+  "recordEvents" : false,
+  "supportedSystems" : [ "WINDOWS", "OS_X" ],
+  "fileFilter" : {
+    "fileExtensionFilter" : null,
+    "inclusiveMimeType" : [ ],
+    "inclusiveMediaType" : [ ],
+    "exclusiveMediaType" : [ ],
+    "exclusiveMimeType" : [ ]
+  },
+  "eventAddToProfile" : null,
+  "options" : "",
+  "defaults" : "SPDisplaysDataType",
+  "workingDirectory" : null,
+  "commandNameOrPath" : "",
+  "OSXcommandNameOrPath" : "system_profiler",
+  "LinuxcommandNameOrPath" : null,
+  "WINcommandNameOrPath" : "dxdiag",
+  "BSDcommandNameOrPath" : null,
+  "OSXoptions" : "SPDisplaysDataType",
+  "Winoptions" : "/whql:off /x /home/anna/workspace/PetExtraction/target/PET_data/extracted_meta_data/dxdiag1399016042133.xml",
+  "Linuxoptions" : null,
+  "noHelp" : true,
+  "regEx" : null,
+  "timeout" : 10000,
+  "waitBetweenCalls" : 3000,
+  "helpOption" : "-h"
+}
