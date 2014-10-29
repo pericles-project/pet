@@ -4,3 +4,5 @@ The tool was created by Fabio Corubolo at University of Liverpool and Anna Egger
 The tool has been entirely created with the PERICLES project http://pericles-project.eu/.
 
 The tool has not been released at this time, as we are waiting authorisation for its licensing. The process is already in act and the tool should be avalaible soon.
+
+Documentation on getting the tool to work can be found on the wiki:
