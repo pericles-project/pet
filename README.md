@@ -5,4 +5,4 @@ The tool has been entirely created with the PERICLES project http://pericles-pro
 
 The tool has not been released at this time, as we are waiting authorisation for its licensing. The process is already in act and the tool should be avalaible soon.
 
-Documentation on getting the tool to work can be found on the wiki:
+Documentation on getting the tool to work can be found on the [project wiki](https://github.com/pericles-project/pet/wiki)
