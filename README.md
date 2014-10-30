@@ -15,6 +15,7 @@ An advantage of the use of PET is that established information extraction tools 
 # User documentation 
 
 * ### [Quick start guide] (https://github.com/pericles-project/pet/wiki/Quick-start-guide)
+
 *  [Description and features of the tool] (https://github.com/pericles-project/pet/wiki)
 *  [Examples for tool usages] (https://github.com/pericles-project/pet/wiki/Examples)
 *  [Exemplary scenarios for the tool] (https://github.com/pericles-project/pet/wiki/Scenarios)
@@ -38,6 +39,7 @@ An advantage of the use of PET is that established information extraction tools 
  <a href="http://www.pericles-project.eu/"> <img src="https://github.com/pericles-project/pet/blob/master/wiki-images/PERICLES%20logo_black.jpg" width="200" align="right"/> </a>
 
 <a href="http://www.liv.ac.uk/"> <img src="https://github.com/pericles-project/pet/blob/master/wiki-images/liverpool_logo.png" width="300"/></a>
+
 <a href="http://www.sub.uni-goettingen.de/"><img src="https://github.com/pericles-project/pet/blob/master/wiki-images/sub-logo.jpg" width="300"/></a>
 
 
