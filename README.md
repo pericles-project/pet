@@ -10,8 +10,10 @@ Various information extraction techniques are implemented as plug-in extraction 
 
 An advantage of the use of PET is that established information extraction tools can be integrated as modules. An user who had to use many different tools to extract the information and metadata for a scenario, could use our tool as framework instead, and will get all required information in one standard format (JSON, or XML) saved in a selectable storage interface. Furthermore this approach enables the possibility to enrich the established set of information with additional information extracted by other PET modules.
 
+## [Quickstart guide] (http://pericles-project.github.io/pet/gh-pages/javadoc/)
+## [Software release] (https://github.com/pericles-project/pet/releases/latest)
 
-## Documentation can be found on the GitHub wiki: https://github.com/pericles-project/pet/wiki
+## Other documentation can be found on the GitHub wiki: https://github.com/pericles-project/pet/wiki
 * [Description and features of the tool] (https://github.com/pericles-project/pet/wiki)
 * [Quick start guide] (https://github.com/pericles-project/pet/wiki/Quick-start-guide)
 * [Examples for tool usages] (https://github.com/pericles-project/pet/wiki/Examples)
