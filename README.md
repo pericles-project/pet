@@ -31,7 +31,7 @@ An advantage of the use of PET is that established information extraction tools 
 * [Development information and software architecture description] (https://github.com/pericles-project/pet/wiki/PET-Development-and-Software-Architecture)
 * [Ideas for future developments] (https://github.com/pericles-project/pet/wiki/TODO-list,-further-developments)
 
-## Other documentation can be found on the GitHub wiki: https://github.com/pericles-project/pet/wiki
+## Other documentation can be found on the [project GitHub wiki] (https://github.com/pericles-project/pet/wiki)
 
 <img src="https://github.com/pericles-project/pet/blob/master/wiki-images/LogoEU.png" width="150"/>
 
