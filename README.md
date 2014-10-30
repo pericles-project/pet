@@ -12,18 +12,20 @@ An advantage of the use of PET is that established information extraction tools 
 
 
 ## Documentation can be found on the GitHub wiki: https://github.com/pericles-project/pet/wiki
-* Description of the tool
-* Quick start guide
-* Examples for tool usages
-* Exemplary scenarios for the tool
-* How to build the tool from sources
-* Development information and software architecture description
-* Eclipse installation for developers
-* A todo list for further developments
-* Development of Extraction Modules and Monitoring Daemons for the tool
+* [Description and features of the tool] (https://github.com/pericles-project/pet/wiki)
+* [Quick start guide] (https://github.com/pericles-project/pet/wiki/Quick-start-guide)
+* [Examples for tool usages] (https://github.com/pericles-project/pet/wiki/Examples)
+* [Exemplary scenarios for the tool] (https://github.com/pericles-project/pet/wiki/Scenarios)
+* [How to build the tool from sources] (https://github.com/pericles-project/pet/wiki/Building-from-source)
+* [Development information and software architecture description] (https://github.com/pericles-project/pet/wiki/PET-Development-and-Software-Architecture)
+* [Eclipse installation for developers] (https://github.com/pericles-project/pet/wiki/Eclipse-installation)
+* [A todo list for further developments] (https://github.com/pericles-project/pet/wiki/TODO-list,-further-developments)
+* [Development of Extraction Modules and Monitoring Daemons for the tool] (https://github.com/pericles-project/pet/wiki/Development-of-Extraction-Modules-and-Monitoring-Daemons)
+
 
 
 [University of Liverpool] (http://www.liv.ac.uk/)
+
 [Göttingen State and University Library] (http://www.sub.uni-goettingen.de/)
 
 
