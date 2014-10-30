@@ -31,16 +31,12 @@ An advantage of the use of PET is that established information extraction tools 
 
 ## Other documentation can be found on the GitHub wiki: https://github.com/pericles-project/pet/wiki
 
-[University of Liverpool] (http://www.liv.ac.uk/)
-
-[Göttingen State and University Library] (http://www.sub.uni-goettingen.de/)
-
 <img src="https://github.com/pericles-project/pet/blob/master/wiki-images/LogoEU.png" width="150"/>
 
 <img src="https://github.com/pericles-project/pet/blob/master/wiki-images/PERICLES%20logo_black.jpg" width="350"/>
 
-<img src="https://github.com/pericles-project/pet/blob/master/wiki-images/liverpool_logo.png" width="350"/>
+<a href="http://www.liv.ac.uk/"> <img src="https://github.com/pericles-project/pet/blob/master/wiki-images/liverpool_logo.png" width="350"/></a>
 
-<img src="https://github.com/pericles-project/pet/blob/master/wiki-images/sub-logo.jpg" width="350"/>
+<a href="http://www.sub.uni-goettingen.de/"><img src="https://github.com/pericles-project/pet/blob/master/wiki-images/sub-logo.jpg" width="350"/></a>
 
 
