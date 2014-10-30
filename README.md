@@ -36,11 +36,9 @@ An advantage of the use of PET is that established information extraction tools 
 [Göttingen State and University Library] (http://www.sub.uni-goettingen.de/)
 
 <img src="https://github.com/pericles-project/pet/blob/master/wiki-images/LogoEU.png" width="150"/>
-
 <img src="https://github.com/pericles-project/pet/blob/master/wiki-images/PERICLES%20logo_black.jpg" width="350"/>
 
 <img src="https://github.com/pericles-project/pet/blob/master/wiki-images/liverpool_logo.png" width="350"/>
-
 <img src="https://github.com/pericles-project/pet/blob/master/wiki-images/sub-logo.jpg" width="350"/>
 
 
