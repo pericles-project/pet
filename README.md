@@ -35,14 +35,13 @@ An advantage of the use of PET is that established information extraction tools 
 
 # Credits
 
-_This project has received funding from the European Union’s Seventh Framework Programme for research, technological development and demonstration under grant agreement no FP7- 601138 PERICLES._ 
+ _This project has received funding from the European Union’s Seventh Framework Programme for research, technological development and demonstration under grant agreement no FP7- 601138 PERICLES._   
+ 
+ <img src="https://github.com/pericles-project/pet/blob/master/wiki-images/LogoEU.png" width="110"/> <a href="http://www.pericles-project.eu/">
+<img src="https://github.com/pericles-project/pet/blob/master/wiki-images/PERICLES%20logo_black.jpg" width="200"/> </a>
 
-<img src="https://github.com/pericles-project/pet/blob/master/wiki-images/LogoEU.png" width="130"/>
+<a href="http://www.liv.ac.uk/"> <img src="https://github.com/pericles-project/pet/blob/master/wiki-images/liverpool_logo.png" width="300"/></a>
 
-<a href="http://www.pericles-project.eu/"><img src="https://github.com/pericles-project/pet/blob/master/wiki-images/PERICLES%20logo_black.jpg" width="330"/> </a>
-
-<a href="http://www.liv.ac.uk/"> <img src="https://github.com/pericles-project/pet/blob/master/wiki-images/liverpool_logo.png" width="330"/></a>
-
-<a href="http://www.sub.uni-goettingen.de/"><img src="https://github.com/pericles-project/pet/blob/master/wiki-images/sub-logo.jpg" width="330"/></a>
+<a href="http://www.sub.uni-goettingen.de/"><img src="https://github.com/pericles-project/pet/blob/master/wiki-images/sub-logo.jpg" width="300"/></a>
 
 
