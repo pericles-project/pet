@@ -14,17 +14,20 @@ An advantage of the use of PET is that established information extraction tools 
 
 ## [Quick start guide] (https://github.com/pericles-project/pet/wiki/Quick-start-guide)
 
-# PET Documentation 
+### [Description and features of the tool] (https://github.com/pericles-project/pet/wiki)
 
-* [Description and features of the tool] (https://github.com/pericles-project/pet/wiki)
-* [Examples for tool usages] (https://github.com/pericles-project/pet/wiki/Examples)
-* [Exemplary scenarios for the tool] (https://github.com/pericles-project/pet/wiki/Scenarios)
-* [How to build the tool from sources] (https://github.com/pericles-project/pet/wiki/Building-from-source)
-* [Javadocs] (http://pericles-project.github.io/pet/gh-pages/javadoc/)
-* [Development information and software architecture description] (https://github.com/pericles-project/pet/wiki/PET-Development-and-Software-Architecture)
-* [Eclipse installation for developers] (https://github.com/pericles-project/pet/wiki/Eclipse-installation)
-* [A todo list for further developments] (https://github.com/pericles-project/pet/wiki/TODO-list,-further-developments)
+### [Examples for tool usages] (https://github.com/pericles-project/pet/wiki/Examples)
+
+### [Exemplary scenarios for the tool] (https://github.com/pericles-project/pet/wiki/Scenarios)
+
+# Developer documentation 
+
+* [How to build from source] (https://github.com/pericles-project/pet/wiki/Building-from-source)
 * [Development of Extraction Modules and Monitoring Daemons for the tool] (https://github.com/pericles-project/pet/wiki/Development-of-Extraction-Modules-and-Monitoring-Daemons)
+* [Javadocs] (http://pericles-project.github.io/pet/gh-pages/javadoc/)
+* [Eclipse installation for developers] (https://github.com/pericles-project/pet/wiki/Eclipse-installation)
+* [Development information and software architecture description] (https://github.com/pericles-project/pet/wiki/PET-Development-and-Software-Architecture)
+* [Ideas for future developments] (https://github.com/pericles-project/pet/wiki/TODO-list,-further-developments)
 
 ## Other documentation can be found on the GitHub wiki: https://github.com/pericles-project/pet/wiki
 
