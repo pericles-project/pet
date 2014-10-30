@@ -1,8 +1,8 @@
 # PERICLES Extraction Tool - PET 
 
-The PERICLES Extraction Tool (PET) is an open source and platform independent tool under Apache license version 2, written in Java 7, for the extraction of significant information from the environment where digital objects are created and modified. This information supports object use and reuse, e.g. for a better long-term preservation of data. The Tool was developed entirely in scope of the PERICLES EU project [http://www.pericles-project.eu/](http://www.pericles-project.eu/) by Fabio Corubolo, University of Liverpool, and Anna Eggers, Göttingen State and University Library.
+The PERICLES Extraction Tool (PET) is an open source (Apache 2 licensed) Java software for the extraction of significant information from the environment where digital objects are created and modified. This information supports object use and reuse, e.g. for a better long-term preservation of data. The Tool was developed entirely for the PERICLES EU project [http://www.pericles-project.eu/](http://www.pericles-project.eu/) by Fabio Corubolo, University of Liverpool, and Anna Eggers, Göttingen State and University Library.
 
-In a nutshell, PET works by analysing the use of the data from within the creator or consumer environment, extracting information useful for the later reuse of the data that is not possible to derive in later phases of the data lifecycle, as for example at ingest time. It works based on sheer curation principles, but has no remote functionality, so the environments user has full control of which information to extract and to keep.
+In a nutshell, PET works by analysing the use of the data from within the creator or consumer environment, extracting information useful for the later reuse of the data that is not possible to derive in later phases of the data lifecycle, as for example at ingest time. It works based on sheer curation principles, but has no remote functionality, so the environments user has full control of which information to extract and to keep. The tool works by analysing both files, and their changes, and the system environment. 
 
 The tool is generic. It can be adapted for various scenarios, as it provides a plug-in structure for the integration of use specific extraction algorithms.
 
@@ -26,8 +26,6 @@ An advantage of the use of PET is that established information extraction tools 
 * [Development of Extraction Modules and Monitoring Daemons for the tool] (https://github.com/pericles-project/pet/wiki/Development-of-Extraction-Modules-and-Monitoring-Daemons)
 
 ## Other documentation can be found on the GitHub wiki: https://github.com/pericles-project/pet/wiki
-
-
 
 [University of Liverpool] (http://www.liv.ac.uk/)
 
