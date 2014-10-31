@@ -2,6 +2,8 @@
 
 The PERICLES Extraction Tool (PET) is an open source (Apache 2 licensed) Java software for the extraction of significant information from the environment where digital objects are created and modified. This information supports object use and reuse, e.g. for a better long-term preservation of data. The Tool was developed entirely for the PERICLES EU project [http://www.pericles-project.eu/](http://www.pericles-project.eu/) by Fabio Corubolo, University of Liverpool, and Anna Eggers, Göttingen State and University Library.
 
+*PEASE NOTICE:* PET is a prototype reserach software, and as such it has limitations in its usability and it has not undergone extensive testing; don't expect production quality release software. It will require some careful configuration, but still it is workign software and can produce useful and novel results.
+
 In a nutshell, PET works by analysing the use of the data from within the creator or consumer environment, extracting information useful for the later reuse of the data that is not possible to derive in later phases of the data lifecycle, as for example at ingest time. It works based on sheer curation principles, but has no remote functionality, so the environments user has full control of which information to extract and to keep. The tool works by analysing both files, and their changes, and the system environment. 
 
 The tool is generic. It can be adapted for various scenarios, as it provides a plug-in structure for the integration of use specific extraction algorithms.
