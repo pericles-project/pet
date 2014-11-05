@@ -31,8 +31,9 @@ An advantage of the use of PET is that established information extraction tools 
 * [Development information and software architecture description] (https://github.com/pericles-project/pet/wiki/PET-Development-and-Software-Architecture)
 * [Ideas for future developments] (https://github.com/pericles-project/pet/wiki/TODO-list,-further-developments)
 
-# Papers
+# Research
 * [iPRES 2014 paper: ‘A pragmatic approach to signifcant environment information collection to support object reuse’] (http://www.pericles-project.eu/uploads/files/ipres2014_PET.pdf)
+* [Slides used for paper presentation] (http://www.slideshare.net/FabioCorubolo/ipres-2014-paper-presentation)
 
 # Credits
 
