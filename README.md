@@ -34,6 +34,7 @@ An advantage of the use of PET is that established information extraction tools 
 # Research
 * [iPRES 2014 paper: ‘A pragmatic approach to signifcant environment information collection to support object reuse’] (http://www.pericles-project.eu/uploads/files/ipres2014_PET.pdf)
 * [Slides used for paper presentation] (http://www.slideshare.net/FabioCorubolo/ipres-2014-paper-presentation)
+* [Full project deliverable on Environment Information Extraction] (http://www.pericles-project.eu/uploads/files/PERICLES_WP4_D4_1-Initial_version_environment_information_extraction_tools-V1_0.pdf)
 
 # Credits
 
