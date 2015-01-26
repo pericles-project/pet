@@ -48,6 +48,7 @@ public static void main(String[] args) {
 	 * Creates the panel with the help text.
 	 */
 	public StartupWindow(Point p1, Dimension d1) {
+		super();
 	//	this.setType(Type.POPUP);
 		final JFrame w1 =this;
 		JEditorPane jEditorPane = new JEditorPane();

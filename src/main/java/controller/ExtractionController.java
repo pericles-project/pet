@@ -30,6 +30,8 @@ import java.util.HashSet;
 import java.util.Properties;
 
 import javax.swing.SwingUtilities;
+import javax.swing.UIManager;
+import javax.swing.UnsupportedLookAndFeelException;
 
 import model.Part;
 import model.Profile;
@@ -82,6 +84,22 @@ public class ExtractionController {
 		new CLI(this);
 		if (builder.graphic && !GraphicsEnvironment.isHeadless()) {
 			// check if graphic is wanted and possible, then start it
+			 try {
+	                System.setProperty("apple.laf.useScreenMenuBar", "true");
+	                UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+	        }
+	        catch(ClassNotFoundException e) {
+	                System.out.println("ClassNotFoundException: " + e.getMessage());
+	        }
+	        catch(InstantiationException e) {
+	                System.out.println("InstantiationException: " + e.getMessage());
+	        }
+	        catch(IllegalAccessException e) {
+	                System.out.println("IllegalAccessException: " + e.getMessage());
+	        }
+	        catch(UnsupportedLookAndFeelException e) {
+	                System.out.println("UnsupportedLookAndFeelException: " + e.getMessage());
+	        }
 			sysTray = new SystemTrayIcon(this);
 			startGui();
 			if (builder.firstStart){

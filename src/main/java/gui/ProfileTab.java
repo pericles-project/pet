@@ -72,8 +72,8 @@ public class ProfileTab extends JPanel {
 		contentPanel.addTab("Monitored files", partTab);
 		contentPanel.addTab("Modules", moduleTab);
 		contentPanel.addTab("Environment information", informationTab);
-		contentPanel.addTab("Events", gui.eventTab);
-		contentPanel.addTab("Help", gui.helpTab);
+//		contentPanel.addTab("Events", gui.eventTab);
+//		contentPanel.addTab("Help", gui.helpTab);
 		this.add(profilePanel, BorderLayout.NORTH);
 		profileContent.add(contentPanel, BorderLayout.CENTER);
 		TitledBorder b = BorderFactory.createTitledBorder("Default Profile");

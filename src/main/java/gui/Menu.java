@@ -1,27 +1,32 @@
 /**
-* Copyright (c) 2014, Fabio Corubolo - University of Liverpool and Anna Eggers - Göttingen State and University Library
-* The work has been developed in the PERICLES Project by Members of the PERICLES Consortium.
-* This work was supported by the European Commission Seventh Framework Programme under Grant Agreement Number FP7- 601138 PERICLES.
-*
-* Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with
-* the License. You may obtain a copy of the License at:   http://www.apache.org/licenses/LICENSE-2.0
-* Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on
-* an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied, including without
-* limitation, any warranties or conditions of TITLE, NON-INFRINGEMENT, MERCHANTIBITLY, or FITNESS FOR A PARTICULAR
-* PURPOSE. In no event and under no legal theory, whether in tort (including negligence), contract, or otherwise,
-* unless required by applicable law or agreed to in writing, shall any Contributor be liable for damages, including
-* any direct, indirect, special, incidental, or consequential damages of any character arising as a result of this
-* License or out of the use or inability to use the Work.
-* See the License for the specific language governing permissions and limitation under the License.
-*/
+ * Copyright (c) 2014, Fabio Corubolo - University of Liverpool and Anna Eggers - Göttingen State and University Library
+ * The work has been developed in the PERICLES Project by Members of the PERICLES Consortium.
+ * This work was supported by the European Commission Seventh Framework Programme under Grant Agreement Number FP7- 601138 PERICLES.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with
+ * the License. You may obtain a copy of the License at:   http://www.apache.org/licenses/LICENSE-2.0
+ * Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on
+ * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied, including without
+ * limitation, any warranties or conditions of TITLE, NON-INFRINGEMENT, MERCHANTIBITLY, or FITNESS FOR A PARTICULAR
+ * PURPOSE. In no event and under no legal theory, whether in tort (including negligence), contract, or otherwise,
+ * unless required by applicable law or agreed to in writing, shall any Contributor be liable for damages, including
+ * any direct, indirect, special, incidental, or consequential damages of any character arising as a result of this
+ * License or out of the use or inability to use the Work.
+ * See the License for the specific language governing permissions and limitation under the License.
+ */
 package gui;
 
+import java.awt.Desktop;
 import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
+import java.awt.Point;
 import java.awt.TextField;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.util.HashSet;
 
 import javax.swing.JButton;
@@ -61,6 +66,13 @@ public class Menu extends JMenu implements ActionListener {
 	private JMenuItem export;
 	private JMenuItem delete;
 	private JMenuItem clear;
+	private JMenu helpMenu;
+	private JMenuItem help;
+	private JMenuItem helps;
+	private JMenuItem helpw;
+	private JMenuItem helpww;
+	private JMenuItem eventst;
+	private JMenuItem eventst2;
 
 	public Menu(GUI guInew) {
 		this.gui = guInew;
@@ -69,20 +81,27 @@ public class Menu extends JMenu implements ActionListener {
 
 	public void createMenu() {
 		menuBar = new JMenuBar();
-		fileMenu = createSubMenu("File");
+		fileMenu = createSubMenu("Extraction");
 		profileMenu = createSubMenu("Profiles");
 		preferencesMenu = createSubMenu("Preferences");
+		helpMenu = createSubMenu("Help");
 
-		startMonitoring = createMenuItem("start continuous extraction",
-				fileMenu);
-		stopMonitoring = createMenuItem("stop continuous extraction", fileMenu);
-		snapshot = createMenuItem("snapshot extraction", fileMenu);
+		//		startMonitoring = createMenuItem("Start continuous extraction",
+		//				fileMenu);
+		//		stopMonitoring = createMenuItem("Stop continuous extraction", fileMenu);
+		fileMenu.add(gui.startStop2);
+		snapshot = createMenuItem("Snapshot extraction", fileMenu);
+
+		eventst = createMenuItem("Show current events", fileMenu);
+
+		eventst2 = createMenuItem("Open event timeline in browser", fileMenu);
+
 		fileMenu.add(new JSeparator());
-		close = createMenuItem("close gui", fileMenu);
-		exit = createMenuItem("exit application", fileMenu);
 
-		newP = createMenuItem("new profile", profileMenu);
-		newPfromT = createMenuItem("new profile from template", profileMenu);
+		exit = createMenuItem("Exit application", fileMenu);
+
+		newP = createMenuItem("New profile", profileMenu);
+		newPfromT = createMenuItem("New profile from template", profileMenu);
 		profileMenu.add(new JSeparator());
 		extract = createMenuItem("Extract only current profile", profileMenu);
 		clearParts = createMenuItem("Remove all parts from current profile",
@@ -92,10 +111,15 @@ public class Menu extends JMenu implements ActionListener {
 		rename = createMenuItem("Rename current profile", profileMenu);
 		export = createMenuItem("Export current profile as template",
 				profileMenu);
-		delete = createMenuItem("delete current profile", profileMenu);
+		delete = createMenuItem("Delete current profile", profileMenu);
 
-		clear = createMenuItem("clear all extracted information",
+		clear = createMenuItem("Clear all extracted information",
 				preferencesMenu);
+		help = createMenuItem("Help", helpMenu);
+		helpww = createMenuItem("Project webpage", helpMenu);
+		helps = createMenuItem("First start guide", helpMenu);
+		helpw= createMenuItem("Quickstart webpage", helpMenu);
+
 		gui.mainFrame.setJMenuBar(menuBar);
 	}
 
@@ -187,9 +211,45 @@ public class Menu extends JMenu implements ActionListener {
 			gui.stopExtraction(true);
 		} else if (event.getSource() == snapshot) {
 			gui.controller.extractor
-					.extract(gui.controller.profileController.getProfiles(),
-							true, false);
+			.extract(gui.controller.profileController.getProfiles(),
+					true, false);
+		} else if (event.getSource() == help) {
+			new HelpFrame();
+
+		} else if (event.getSource() == helps) {
+			new StartupWindow(new Point(100,100),new Dimension(410,450));
+
+		} else if (event.getSource() == helpw) {
+			try {
+				Desktop.getDesktop().browse(new URI("https://github.com/pericles-project/pet/wiki/Quick-start-guide"));
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (URISyntaxException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+
+		} else if (event.getSource() == helpww) {
+			try {
+				Desktop.getDesktop().browse(new URI("https://github.com/pericles-project/pet/"));
+			} catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			} catch (URISyntaxException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+
+		} else if (event.getSource() == eventst) {
+			gui.eventTab = new EventsFrame();
+
+
+		} else if (event.getSource() == eventst2) {
+			EventsFrame.showTimeline();
 		}
+
+
 	}
 
 	private void deleteMetadataDialog() {

@@ -32,6 +32,7 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
+import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 import javax.swing.JProgressBar;
 import javax.swing.WindowConstants;
@@ -51,14 +52,14 @@ public class GUI {
 	protected final ExtractionController controller;
 	/** GUI tab with the list of {@link Profile}s */
 	public ProfileTab profileTab;
-	/** GUI tab that shows usage help */
-	public HelpTab helpTab;
 	/** GUI tab to display occurring events */
-	public EventsTab eventTab = new EventsTab();
+	public EventsFrame eventTab = null;
 	protected final JFrame mainFrame = new JFrame("Pericles Extraction Tool");
 	private final JPanel workPanel = new JPanel(new BorderLayout());
 	private final EventListener listener = new EventListener();
 	private final JButton startStop = new JButton("Start extraction");
+	private final JButton events = new JButton("Show events");
+	public final JMenuItem startStop2 = new JMenuItem("Start extraction");
 	private final JButton once = new JButton("Snapshot", SNAPSHOT);
 	private final JLabel status = new JLabel("Status");
 	private final JLabel status2 = new JLabel("");
@@ -90,7 +91,6 @@ public class GUI {
 		mainFrame.setContentPane(contentPanel);
 		new Menu(this);
 		createWorkPanel();
-		helpTab = new HelpTab();
 		profileTab = new ProfileTab(this);
 		mainFrame.setLayout(new BorderLayout(5, 5));
 		mainFrame.add(workPanel, BorderLayout.PAGE_END);
@@ -128,6 +128,8 @@ public class GUI {
 	 */
 	private void createWorkPanel() {
 		startStop.addActionListener(listener);
+		startStop.addActionListener(listener);
+		events.addActionListener(listener);
 		once.addActionListener(listener);
 		once.setEnabled(true);
 		bar1.setUI(new AquaSpinningProgressBarUI());
@@ -137,6 +139,7 @@ public class GUI {
 		JPanel flow = new JPanel();
 		flow.add(startStop);
 		flow.add(once);
+		flow.add(events);
 		once.setEnabled(true);
 		flow.add(bar1);
 		workPanel.add(flow, BorderLayout.WEST);
@@ -155,6 +158,9 @@ public class GUI {
 	 */
 	protected void startExtraction(boolean daemons) {
 		status.setText("[ Continuous extraction: true ]");
+		startStop2.setText("Stop monitor");
+		startStop2.setIcon(STOP);
+		startStop2.setSelected(true);
 		startStop.setText("Stop monitor");
 		startStop.setIcon(STOP);
 		startStop.setSelected(true);
@@ -175,6 +181,9 @@ public class GUI {
 		startStop.setText("Start monitor");
 		startStop.setIcon(PLAY);
 		startStop.setSelected(false);
+		startStop2.setText("Start monitor");
+		startStop2.setIcon(PLAY);
+		startStop2.setSelected(false);
 		controller.extractor.setUpdateExtraction(false);
 		if (daemons) {
 			controller.extractor.stopDaemons();
@@ -249,7 +258,7 @@ public class GUI {
 	class EventListener implements ActionListener {
 		@Override
 		public void actionPerformed(ActionEvent e) {
-			if (e.getSource() == startStop) {
+			if (e.getSource() == startStop || e.getSource() == startStop2) {
 				if (startStop.isSelected()) {
 					stopExtraction(true);
 				} else {
@@ -260,6 +269,9 @@ public class GUI {
 						.extract(controller.profileController.getProfiles(),
 								true, false);
 			}
+		 else if (e.getSource() == events) {
+			 eventTab = new EventsFrame();
+		}
 		}
 	}
 

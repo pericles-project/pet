@@ -19,10 +19,13 @@ package gui;
 import java.awt.Desktop;
 import java.awt.Dimension;
 import java.awt.Point;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.io.IOException;
 import java.net.URISyntaxException;
 
 import javax.swing.JEditorPane;
+import javax.swing.JFrame;
 import javax.swing.JScrollPane;
 import javax.swing.SwingUtilities;
 import javax.swing.event.HyperlinkEvent;
@@ -34,17 +37,19 @@ import javax.swing.text.html.StyleSheet;
 /**
  * GUI tab to display usage information for the user.
  */
-public class HelpTab extends JScrollPane {
+public class HelpFrame extends JFrame {
 	private static final long serialVersionUID = 1L;
 
 	/**
 	 * Creates the panel with the help text.
 	 */
-	public HelpTab() {
+	public HelpFrame() {
+		JScrollPane c = new JScrollPane();
+		this.setContentPane(c);
 		final JEditorPane jEditorPane = new JEditorPane();
 		jEditorPane.setEditable(false);
-		this.setViewportView(jEditorPane);
-		;
+		c.setViewportView(jEditorPane);
+		
 		HTMLEditorKit kit = new HTMLEditorKit();
 		jEditorPane.setEditorKit(kit);
 		StyleSheet styleSheet = kit.getStyleSheet();
@@ -144,5 +149,20 @@ public class HelpTab extends JScrollPane {
 		htmlString += "</body></html>";
 
 		jEditorPane.setText(htmlString);
+		addWindowListener(new WindowAdapter() {
+			@Override
+			public void windowClosing(WindowEvent e) {
+				// TODO Auto-generated method stub
+				super.windowClosing(e);
+				dispose();
+			}
+		});
+		this.validate();
+		this.setVisible(true);
+		this.toFront();
+		this.setLocation(50,50);
+		this.setSize(400,400);
+		setAlwaysOnTop( true );
+
 	}
 }
