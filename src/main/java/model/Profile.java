@@ -271,9 +271,9 @@ public class Profile {
 	public String getOutputDirectory() {
 		String outputDirectory = EXTRACTION_PROFILES_DIRECTORY + UUID
 				+ File.separator;
-		if (!isDirectory(outputDirectory)) {
-			createDirectory(outputDirectory);
-		}
+//		if (!isDirectory(outputDirectory)) {
+//			createDirectory(outputDirectory);
+//		}
 		return outputDirectory;
 	}
 
