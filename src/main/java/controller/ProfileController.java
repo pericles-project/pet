@@ -158,10 +158,10 @@ public class ProfileController {
 	private void createDefaultProfile() {
 		if (defaultProfile == null) {
 			defaultProfile = createProfile("defaultProfile");
-			for (GenericModule genericModule : ModuleController
-					.getGenericModuleSet()) {
-				defaultProfile.addModule(genericModule.getInstance());
-			}
+//			for (GenericModule genericModule : ModuleController
+//					.getGenericModuleSet()) {
+//				defaultProfile.addModule(genericModule.getInstance());
+//			}
 		}
 		profiles.add(defaultProfile);
 	}

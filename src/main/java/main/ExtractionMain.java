@@ -20,14 +20,19 @@ import static configuration.Constants.EXTRACTION_PREFERENCES_FILE;
 import static configuration.Constants.SI_LOCK_FILE;
 import static configuration.Constants.VERSION;
 import static configuration.Log.EXCEPTION_LOGGER;
+import gui.StartupWindow;
 
 import java.io.File;
 import java.io.RandomAccessFile;
 import java.nio.channels.FileLock;
+import java.nio.file.Files;
+import java.nio.file.Path;
+import java.nio.file.Paths;
 import java.util.Properties;
 import java.util.logging.Level;
 
 import storage.GeneralStorage;
+import utility.FileUtils;
 import utility.PropertiesSaverAndLoader;
 import configuration.Constants;
 import configuration.Log;
@@ -44,6 +49,7 @@ import controller.StorageController;
  */
 public class ExtractionMain {
 	private static StartCommands startInterface;
+	private static boolean firstStart;
 
 	private static boolean lockInstance(final String lockFile) {
 		try {
@@ -83,7 +89,17 @@ public class ExtractionMain {
 	 *            User arguments given at tool start
 	 */
 	public static void main(String args[]) {
+		
 		startInterface = new StartCommands(args);
+		String workingDirectory =startInterface.options.destination;
+		if (workingDirectory == null || workingDirectory.trim().length() == 0) {
+			workingDirectory = FileUtils.getCurrentJarFolder(Constants.class)
+					+ "";
+		}
+		workingDirectory = workingDirectory +  File.separator + "PET_data" + File.separator;
+		//System.out.println(workingDirectory);
+		firstStart = !Files.exists(Paths.get(workingDirectory));
+		//System.out.println(firstStart);
 		new Constants(startInterface.options.destination);
 		if (!lockInstance(SI_LOCK_FILE)) {
 			EXCEPTION_LOGGER.log(Level.SEVERE,
@@ -123,6 +139,7 @@ public class ExtractionMain {
 		if (optionIsTrue("version", userInput)) {
 			printVersionAndExit();
 		}
+		builder.firstStart = firstStart;
 		builder.storageSystem = userInput.getProperty("storage");
 		return builder.create();
 	}

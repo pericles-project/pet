@@ -1,23 +1,32 @@
 /**
-* Copyright (c) 2014, Fabio Corubolo - University of Liverpool and Anna Eggers - Göttingen State and University Library
-* The work has been developed in the PERICLES Project by Members of the PERICLES Consortium.
-* This work was supported by the European Commission Seventh Framework Programme under Grant Agreement Number FP7- 601138 PERICLES.
-*
-* Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with
-* the License. You may obtain a copy of the License at:   http://www.apache.org/licenses/LICENSE-2.0
-* Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on
-* an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied, including without
-* limitation, any warranties or conditions of TITLE, NON-INFRINGEMENT, MERCHANTIBITLY, or FITNESS FOR A PARTICULAR
-* PURPOSE. In no event and under no legal theory, whether in tort (including negligence), contract, or otherwise,
-* unless required by applicable law or agreed to in writing, shall any Contributor be liable for damages, including
-* any direct, indirect, special, incidental, or consequential damages of any character arising as a result of this
-* License or out of the use or inability to use the Work.
-* See the License for the specific language governing permissions and limitation under the License.
-*/
+ * Copyright (c) 2014, Fabio Corubolo - University of Liverpool and Anna Eggers - Göttingen State and University Library
+ * The work has been developed in the PERICLES Project by Members of the PERICLES Consortium.
+ * This work was supported by the European Commission Seventh Framework Programme under Grant Agreement Number FP7- 601138 PERICLES.
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License"); you may not use this file except in compliance with
+ * the License. You may obtain a copy of the License at:   http://www.apache.org/licenses/LICENSE-2.0
+ * Unless required by applicable law or agreed to in writing, software distributed under the License is distributed on
+ * an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied, including without
+ * limitation, any warranties or conditions of TITLE, NON-INFRINGEMENT, MERCHANTIBITLY, or FITNESS FOR A PARTICULAR
+ * PURPOSE. In no event and under no legal theory, whether in tort (including negligence), contract, or otherwise,
+ * unless required by applicable law or agreed to in writing, shall any Contributor be liable for damages, including
+ * any direct, indirect, special, incidental, or consequential damages of any character arising as a result of this
+ * License or out of the use or inability to use the Work.
+ * See the License for the specific language governing permissions and limitation under the License.
+ */
 package gui;
+
+import java.awt.Desktop;
+import java.awt.Dimension;
+import java.awt.Point;
+import java.io.IOException;
+import java.net.URISyntaxException;
 
 import javax.swing.JEditorPane;
 import javax.swing.JScrollPane;
+import javax.swing.SwingUtilities;
+import javax.swing.event.HyperlinkEvent;
+import javax.swing.event.HyperlinkListener;
 import javax.swing.text.Document;
 import javax.swing.text.html.HTMLEditorKit;
 import javax.swing.text.html.StyleSheet;
@@ -32,7 +41,7 @@ public class HelpTab extends JScrollPane {
 	 * Creates the panel with the help text.
 	 */
 	public HelpTab() {
-		JEditorPane jEditorPane = new JEditorPane();
+		final JEditorPane jEditorPane = new JEditorPane();
 		jEditorPane.setEditable(false);
 		this.setViewportView(jEditorPane);
 		;
@@ -40,17 +49,44 @@ public class HelpTab extends JScrollPane {
 		jEditorPane.setEditorKit(kit);
 		StyleSheet styleSheet = kit.getStyleSheet();
 		styleSheet
-				.addRule("body {color:#000; font-family:times; margin: 4px; }");
+		.addRule("body {color:#000; font-family:times; margin: 4px; }");
 		styleSheet
-				.addRule("pre {font : 10px monaco; color : black; background-color : #fafafa; }");
+		.addRule("pre {font : 10px monaco; color : black; background-color : #fafafa; }");
 
 		// create some simple html as a string
 		String htmlString = "<html>\n" + "<body>\n <h1>PET help</h1>";
+		jEditorPane.addHyperlinkListener(new HyperlinkListener() {
 
+			public void hyperlinkUpdate(HyperlinkEvent e) {
+				if (HyperlinkEvent.EventType.ACTIVATED == e.getEventType()) {
+					try {
+						if (e.getURL().toString().equals("http://petGuide")){
+							SwingUtilities.invokeLater(new Runnable() {
+								@Override
+								public void run() {
+									new StartupWindow(new Point(100,100),new Dimension(410,450));
+								}
+							});	
+
+						} else 
+							Desktop.getDesktop().browse(e.getURL().toURI());
+					} catch (IOException e1) {
+						e1.printStackTrace();
+					} catch (URISyntaxException e1) {
+						// TODO Auto-generated catch block
+						e1.printStackTrace();
+					}
+				}
+
+			}
+		});
 		// create a document, set it on the jeditorpane, then add the html
 		Document doc = kit.createDefaultDocument();
 		jEditorPane.setDocument(doc);
-		htmlString += "<h2>Modules</h2>Modules are used to extract information from the environment. "
+		htmlString += "<B>Please visit the PET website for more help, and the PET website's <a href='https://github.com/pericles-project/pet/wiki/Quick-start-guide'>Quickstart guide</a></B><br>"
+				+ "<B>Follow <a href='http://petGuide'>this link</a> to re-open the short guide that was shown at the first start of PET</B><br>"
+				+ ""
+				+ "<h2>Modules</h2>Modules are used to extract information from the environment. "
 				+ "They define a set of formatted information to be extracted and the way of how "
 				+ "to extract it.\n"
 				+ "Modules always belong to a profile. You can find a list of modules belonging to"

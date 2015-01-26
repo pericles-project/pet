@@ -19,9 +19,12 @@ package controller;
 import static configuration.Constants.EXTRACTION_PREFERENCES_FILE;
 import static configuration.Log.FLOW_LOGGER;
 import gui.GUI;
+import gui.StartupWindow;
 import gui.SystemTrayIcon;
 
+import java.awt.Dimension;
 import java.awt.GraphicsEnvironment;
+import java.awt.Point;
 import java.nio.file.Path;
 import java.util.HashSet;
 import java.util.Properties;
@@ -81,6 +84,14 @@ public class ExtractionController {
 			// check if graphic is wanted and possible, then start it
 			sysTray = new SystemTrayIcon(this);
 			startGui();
+			if (builder.firstStart){
+				SwingUtilities.invokeLater(new Runnable() {
+					@Override
+					public void run() {
+						new StartupWindow(new Point(100,100),new Dimension(410,450));
+					}
+				});				
+			}
 		}
 	}
 

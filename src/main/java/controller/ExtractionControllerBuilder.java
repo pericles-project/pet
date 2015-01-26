@@ -28,6 +28,7 @@ public class ExtractionControllerBuilder {
 	boolean graphic = true;
 	protected boolean updateExtraction = true;
 	public String storageSystem;
+	public boolean firstStart = false;
 
 	/**
 	 * This function has to be called as the last function of the chain. It will

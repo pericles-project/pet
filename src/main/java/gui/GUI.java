@@ -104,6 +104,7 @@ public class GUI {
 		});
 		mainFrame.setExtendedState(Frame.MAXIMIZED_BOTH);
 		mainFrame.setVisible(true);
+		mainFrame.toFront();
 	}
 
 	/**
