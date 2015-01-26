@@ -97,12 +97,8 @@ public class ProfileController {
 	private void loadTemplates() {
 		File templatesParentDirectory = new File(TEMPLATES_DIRECTORY);
 		loadTemplatesFrom(templatesParentDirectory);
-		boolean defaultTemplatesAvailable = false;
-		for (ProfileTemplate template : templates) {
-			if (template.name.equals("Watch system resource usage")) {
-				defaultTemplatesAvailable = true;
-			}
-		}
+		boolean defaultTemplatesAvailable = !templates.isEmpty();
+		
 		if (!defaultTemplatesAvailable) {
 			File f = utility.FileUtils.getCurrentJarFolder(this.getClass());
 			File f2 = new File(f, "profile_templates");
