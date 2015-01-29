@@ -29,7 +29,7 @@
   "timeout" : 10000,
   "waitBetweenCalls" : 1000,
   "helpOption" : "-h",
-  "commandNames" : [ "soffice", "Preview", "AdobeReader", "Pages" ],
+  "commandNames" : [ "soffice", "Preview", "AdobeReader", "Pages","Microsoft" ],
   "monitorFiles" : true,
   "targetFolder" : null,
   "pid" : 0

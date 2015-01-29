@@ -128,7 +128,7 @@ public class GUI {
 	 */
 	private void createWorkPanel() {
 		startStop.addActionListener(listener);
-		startStop.addActionListener(listener);
+		startStop2.addActionListener(listener);
 		events.addActionListener(listener);
 		once.addActionListener(listener);
 		once.setEnabled(true);
