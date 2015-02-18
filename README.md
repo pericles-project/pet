@@ -22,6 +22,11 @@ An advantage of the use of PET is that established information extraction tools 
 *  [Examples for tool usages] (https://github.com/pericles-project/pet/wiki/Examples)
 *  [Exemplary scenarios for the tool] (https://github.com/pericles-project/pet/wiki/Scenarios)
 
+*  [Slides for IDCC2015] (http://www.slideshare.net/FabioCorubolo/slides-for-idcc-pet-presentation)
+*  [Tutorial 1 for IDCC2015] (http://www.slideshare.net/FabioCorubolo/pet-tutorial-script-1-system-info)
+*  [Tutorial 2 for IDCC2015] (http://www.slideshare.net/FabioCorubolo/pet-tutorial-script-2-file-information)
+*  [Tutorial 3 for IDCC2015] (http://www.slideshare.net/FabioCorubolo/pet-demo-script-3-monitoring-document-access)
+
 # Developer documentation 
 
 * [How to build from source] (https://github.com/pericles-project/pet/wiki/Building-from-source)
