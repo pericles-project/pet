@@ -51,8 +51,13 @@ public class FileStorageInterface extends GeneralStorage {
 	// maps to last used file part (profile UUID+ file UUID) tp file number
 	private final Map<String, Integer> lastFile = new HashMap<String, Integer>();
 
-	@SuppressWarnings("unchecked")
+	
 	public FileStorageInterface() {
+		initPathToId();
+	}
+
+	@SuppressWarnings("unchecked")
+	public void initPathToId() {
 		try {
 			// we must store and read the mapping of file paths to ids
 			// (althought it could be reconstructed from the extraction data
@@ -64,19 +69,7 @@ public class FileStorageInterface extends GeneralStorage {
 			pathToId = new HashMap<String, String>();
 		}
 	}
-	@SuppressWarnings("unchecked")
-	public FileStorageInterface(String dataFolder ) {
-		try {
-			// we must store and read the mapping of file paths to ids
-			// (althought it could be reconstructed from the extraction data
-			// themselves)
-			pathToId = initMapper().readValue(
-					new File(dataFolder, "filetoidmap.json"),
-					HashMap.class);
-		} catch (IOException e) {
-			pathToId = new HashMap<String, String>();
-		}
-	}
+	
 
 	@Override
 	public void finalize() {
@@ -195,6 +188,8 @@ public class FileStorageInterface extends GeneralStorage {
 		File out = new File(Constants.OUTPUT_DIRECTORY, coll.profileUUID);
 		FileUtils.createDirectory(out.toPath());
 		if (coll instanceof Part) {
+			if (pathToId.size()==0)
+				initPathToId();
 			Part part = (Part) coll;
 			String path = part.getPath();
 			String id = pathToId.get(path);

@@ -71,7 +71,7 @@ public class Part extends ExtractionResultCollection {
 	 */
 	@Override
 	public String toString() {
-		return this.getFile().getFileName().toString();
+		return path;
 	}
 
 	/**
