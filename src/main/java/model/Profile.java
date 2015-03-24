@@ -472,6 +472,7 @@ public class Profile {
 				}
 			}
 			if (!inSet) {
+				if (profileController.controller!=null)
 				profileController.controller.fileMonitorDaemon
 						.registerFile(part.getFile());
 				parts.add(part);
