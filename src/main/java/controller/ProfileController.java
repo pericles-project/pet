@@ -35,6 +35,7 @@ import model.Profile;
 import model.ProfileTemplate;
 import modules.AbstractModule;
 import storage.ConfigSaver;
+import configuration.Constants;
 import configuration.Log;
 import configuration.ModuleConfiguration;
 
@@ -50,7 +51,7 @@ public class ProfileController {
 	private final HashSet<Profile> profiles = new HashSet<Profile>();
 	/** List of all available templates to create profiles */
 	private final HashSet<ProfileTemplate> templates = new HashSet<ProfileTemplate>();
-	/** The applications {@link ExtractionController} */
+	///** The applications {@link ExtractionController} */
 	public final ExtractionController controller;
 
 	/**
@@ -67,13 +68,19 @@ public class ProfileController {
 	 * @param controller
 	 *            The applications ExtractionController
 	 */
-	protected ProfileController(ExtractionController controller) {
+	public ProfileController(ExtractionController controller) {
 		this.controller = controller;
 		loadProfiles();
 		loadTemplates();
 		createDefaultProfile();
 	}
-
+	public ProfileController(String dataFolder) {
+		this.controller = null;
+		new Constants(dataFolder);
+		loadProfiles();
+		//loadTemplates();
+		//createDefaultProfile();
+	}
 	/**
 	 * Loads all stored {@link Profile}s.
 	 */

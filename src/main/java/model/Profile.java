@@ -103,7 +103,7 @@ public class Profile {
 			FileInputStream inputStream = new FileInputStream(
 					getOutputDirectory() + "properties");
 			properties.loadFromXML(inputStream);
-		} catch (IOException e) {
+		} catch (Exception e) {
 			EXCEPTION_LOGGER.log(Level.SEVERE,
 					"Exception at loadProperties() of profile: " + UUID, e);
 			return;

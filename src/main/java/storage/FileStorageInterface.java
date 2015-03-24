@@ -64,6 +64,19 @@ public class FileStorageInterface extends GeneralStorage {
 			pathToId = new HashMap<String, String>();
 		}
 	}
+	@SuppressWarnings("unchecked")
+	public FileStorageInterface(String dataFolder ) {
+		try {
+			// we must store and read the mapping of file paths to ids
+			// (althought it could be reconstructed from the extraction data
+			// themselves)
+			pathToId = initMapper().readValue(
+					new File(dataFolder, "filetoidmap.json"),
+					HashMap.class);
+		} catch (IOException e) {
+			pathToId = new HashMap<String, String>();
+		}
+	}
 
 	@Override
 	public void finalize() {
