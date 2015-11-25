@@ -372,6 +372,7 @@ public class Profile {
 		if (enabled) {
 			if (module instanceof AbstractDaemonModule) {
 				AbstractDaemonModule adm = (AbstractDaemonModule) module;
+				if (profileController.controller!=null)
 				if (profileController.controller.extractor
 						.getUpdateExtraction()) {
 					adm.start();
