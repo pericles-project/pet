@@ -29,7 +29,7 @@ import org.ddt.output.BasicXMLOutputModule;
 import org.ddt.output.CSVOutputModule;
 import org.ddt.output.OutputModule;
 import org.ddt.processor.FileProcessor;
-import org.ddt.processor.HSLFFileProcessor;
+//import org.ddt.processor.HSLFFileProcessor;
 import org.ddt.processor.POIFSEventProcessor;
 import org.ddt.processor.RecordEventProcessor;
 import org.ddt.listener.records.DConRefListener;
@@ -384,7 +384,7 @@ public class OfficeDDT
         processors.add(pep);
 	processors.add(pep2);
 
-        processors.add(new HSLFFileProcessor());
+//        processors.add(new HSLFFileProcessor());
 
         RecordEventProcessor rep = new RecordEventProcessor();
         rep.registerListener(new SupBookListener(),

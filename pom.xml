@@ -179,7 +179,6 @@
 		<dependency>
 			<groupId>org.reflections</groupId>
 			<artifactId>reflections</artifactId>
-			<version>0.9.8</version>
 		</dependency>
 		<dependency>
 			<groupId>junit</groupId>
@@ -214,7 +213,7 @@
 		<dependency>
 			<groupId>org.ddt</groupId>
 			<artifactId>OfficeDDT</artifactId>
-			<version>0.0.1-SNAPSHOT</version>
+			<version>0.0.2-SNAPSHOT</version>
 		</dependency>
 
 		<dependency>
@@ -300,4 +299,18 @@ This project is related to the Pericles Encapsulation Tool, that can be used to 
 
 	</repositories>
 
+	<dependencyManagement>
+		<dependencies>
+			<dependency>
+				<groupId>org.reflections</groupId>
+				<artifactId>reflections</artifactId>
+				<version>0.9.8</version>
+			</dependency>
+			<dependency>
+				<groupId>com.google.guava</groupId>
+				<artifactId>guava</artifactId>
+				<version>17.0</version>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
 </project>
