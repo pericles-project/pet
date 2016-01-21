@@ -49,3 +49,5 @@ local.properties
 partSaveTest1
 partSaveTest2
 saveAndLoadPartSetTest
+/.idea/
+/PetExtraction.iml
