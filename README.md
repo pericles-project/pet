@@ -17,6 +17,7 @@ An advantage of the use of PET is that established information extraction tools 
 # User documentation 
 
 ### [Quick start guide] (https://github.com/pericles-project/pet/wiki/Quick-start-guide)
+*  [Introduction video](https://www.youtube.com/watch?v=wonEEil1_c0)
 *  [Pericles BLOG presenting PET] (http://www.pericles-project.eu/blog/post/metadata%20extraction,%20environment%20information)
 *  [Description and features of the tool] (https://github.com/pericles-project/pet/wiki)
 *  [Examples for tool usages] (https://github.com/pericles-project/pet/wiki/Examples)
