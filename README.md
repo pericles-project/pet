@@ -45,7 +45,6 @@ An advantage of the use of PET is that established information extraction tools 
 We are currently carrying out research on how to map the PET extracted information into high level ontologies. Two tools adressing this question will be released in Q4 2016:
 
 * [Digital Ecosystem Model] (https://github.com/pericles-project/DEM) An ontology to model digital ecosystems
-* [PET2LRM] (https://github.com/pericles-project/PET2LRM) A script to map PET information into the an ontology
 
 # Credits
 
