@@ -42,9 +42,9 @@ An advantage of the use of PET is that established information extraction tools 
 * [Slides used for paper presentation] (http://www.slideshare.net/FabioCorubolo/ipres-2014-paper-presentation)
 * [Full project deliverable on Environment Information Extraction] (http://www.pericles-project.eu/uploads/files/PERICLES_WP4_D4_1-Initial_version_environment_information_extraction_tools-V1_0.pdf)
  
-We are currently carrying out research on how to map the PET extracted information into high level ontologies. Two tools adressing this question will be released in Q4 2016:
-
+We investigated how to map the PET extracted information into high level ontologies, e.g. the Digital Ecosystem Model. The result is a workflow which was shown on Dec. 2016 at the PERICLES final event:
 * [Digital Ecosystem Model] (https://github.com/pericles-project/DEM) An ontology to model digital ecosystems
+* [Workflow] (https://github.com/annaeg/PET2EcoBuilder4DEMO)
 
 # Credits
 
