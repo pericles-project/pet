@@ -12,39 +12,39 @@ Various information extraction techniques are implemented as plug-in extraction 
 
 An advantage of the use of PET is that established information extraction tools can be integrated as modules. An user who had to use many different tools to extract the information and metadata for a scenario, could use our tool as framework instead, and will get all required information in one standard format (JSON, or XML) saved in a selectable storage interface. Furthermore this approach enables the possibility to enrich the established set of information with additional information extracted by other PET modules.
 
-## [Download PET] (https://github.com/pericles-project/pet/releases/latest)
+## [Download PET](https://github.com/pericles-project/pet/releases/latest)
 
 # User documentation 
 
-### [Quick start guide] (https://github.com/pericles-project/pet/wiki/Quick-start-guide)
+### [Quick start guide](https://github.com/pericles-project/pet/wiki/Quick-start-guide)
 *  [Introduction video](https://www.youtube.com/watch?v=wonEEil1_c0)
-*  [Pericles BLOG presenting PET] (http://www.pericles-project.eu/blog/post/metadata%20extraction,%20environment%20information)
-*  [Description and features of the tool] (https://github.com/pericles-project/pet/wiki)
-*  [Examples for tool usages] (https://github.com/pericles-project/pet/wiki/Examples)
-*  [Exemplary scenarios for the tool] (https://github.com/pericles-project/pet/wiki/Scenarios)
+*  [Pericles BLOG presenting PET](http://www.pericles-project.eu/blog/post/metadata%20extraction,%20environment%20information)
+*  [Description and features of the tool](https://github.com/pericles-project/pet/wiki)
+*  [Examples for tool usages](https://github.com/pericles-project/pet/wiki/Examples)
+*  [Exemplary scenarios for the tool](https://github.com/pericles-project/pet/wiki/Scenarios)
 
-*  [Slides for IDCC2015] (http://www.slideshare.net/FabioCorubolo/slides-for-idcc-pet-presentation)
-*  [Tutorial 1 for IDCC2015] (http://www.slideshare.net/FabioCorubolo/pet-tutorial-script-1-system-info)
-*  [Tutorial 2 for IDCC2015] (http://www.slideshare.net/FabioCorubolo/pet-tutorial-script-2-file-information)
-*  [Tutorial 3 for IDCC2015] (http://www.slideshare.net/FabioCorubolo/pet-demo-script-3-monitoring-document-access)
+*  [Slides for IDCC2015](http://www.slideshare.net/FabioCorubolo/slides-for-idcc-pet-presentation)
+*  [Tutorial 1 for IDCC2015](http://www.slideshare.net/FabioCorubolo/pet-tutorial-script-1-system-info)
+*  [Tutorial 2 for IDCC2015](http://www.slideshare.net/FabioCorubolo/pet-tutorial-script-2-file-information)
+*  [Tutorial 3 for IDCC2015](http://www.slideshare.net/FabioCorubolo/pet-demo-script-3-monitoring-document-access)
 
 # Developer documentation 
 
-* [How to build from source] (https://github.com/pericles-project/pet/wiki/Building-from-source)
-* [Development of Extraction Modules and Monitoring Daemons for the tool] (https://github.com/pericles-project/pet/wiki/Development-of-Extraction-Modules-and-Monitoring-Daemons)
-* [Javadocs] (http://pericles-project.github.io/pet/gh-pages/javadoc/)
-* [Eclipse installation for developers] (https://github.com/pericles-project/pet/wiki/Eclipse-installation)
-* [Development information and software architecture description] (https://github.com/pericles-project/pet/wiki/PET-Development-and-Software-Architecture)
-* [Ideas for future developments] (https://github.com/pericles-project/pet/wiki/TODO-list,-further-developments)
+* [How to build from source](https://github.com/pericles-project/pet/wiki/Building-from-source)
+* [Development of Extraction Modules and Monitoring Daemons for the tool](https://github.com/pericles-project/pet/wiki/Development-of-Extraction-Modules-and-Monitoring-Daemons)
+* [Javadocs](http://pericles-project.github.io/pet/gh-pages/javadoc/)
+* [Eclipse installation for developers](https://github.com/pericles-project/pet/wiki/Eclipse-installation)
+* [Development information and software architecture description](https://github.com/pericles-project/pet/wiki/PET-Development-and-Software-Architecture)
+* [Ideas for future developments](https://github.com/pericles-project/pet/wiki/TODO-list,-further-developments)
 
 # Research
-* [iPRES 2014 paper: ‘A pragmatic approach to signifcant environment information collection to support object reuse’] (http://www.pericles-project.eu/uploads/files/ipres2014_PET.pdf)
-* [Slides used for paper presentation] (http://www.slideshare.net/FabioCorubolo/ipres-2014-paper-presentation)
-* [Full project deliverable on Environment Information Extraction] (http://www.pericles-project.eu/uploads/files/PERICLES_WP4_D4_1-Initial_version_environment_information_extraction_tools-V1_0.pdf)
+* [iPRES 2014 paper: ‘A pragmatic approach to signifcant environment information collection to support object reuse’](http://www.pericles-project.eu/uploads/files/ipres2014_PET.pdf)
+* [Slides used for paper presentation](http://www.slideshare.net/FabioCorubolo/ipres-2014-paper-presentation)
+* [Full project deliverable on Environment Information Extraction](http://www.pericles-project.eu/uploads/files/PERICLES_WP4_D4_1-Initial_version_environment_information_extraction_tools-V1_0.pdf)
  
 We investigated how to map the PET extracted information into high level ontologies, e.g. the Digital Ecosystem Model. The result is a workflow which was shown on Dec. 2016 at the PERICLES final event:
-* [Digital Ecosystem Model] (https://github.com/pericles-project/DEM) An ontology to model digital ecosystems
-* [Workflow] (https://github.com/annaeg/PET2EcoBuilder4DEMO)
+* [Digital Ecosystem Model](https://github.com/pericles-project/DEM) An ontology to model digital ecosystems
+* [Workflow](https://github.com/annaeg/PET2EcoBuilder4DEMO)
 
 # Credits
 
